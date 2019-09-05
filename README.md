@@ -1,4 +1,4 @@
-# Flash-edit-mysql
+# Flask-edit-mysql
 说明：  
 利用Python Flask框架搭建web化操作mysql数据库小工具  
 环境：  

@@ -1,0 +1,62 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+{% extends "base.html" %}
+
+{% block title %}首页{% endblock %}
+
+{% block page_content %}
+<style>
+    table{
+        text-align: center;
+    }
+    th{
+        text-align: center;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+
+<body>
+    <table class="table table-bordered">
+    <tr>
+        <th colspan="5">当前版本</th>
+    </tr>
+    <tr>
+        <th>ID</th>
+        <th>APP类型</th>
+        <th>版本</th>
+        <th>更新说明</th>
+        <th>更新日期</th>
+    </tr>
+        {% for i in u %}
+            <tr>
+                <td>{{ i[0] }}</td>
+                <td>{{ i[1] }}</td>
+                <td>{{ i[2] }}</td>
+                <td>{{ i[3] }}</td>
+                <td>{{ i[4] }}</td>
+            </tr>
+    {% endfor %}
+    </table>
+<p style="color:red">
+    {{error_msg}}
+</p>
+    <form action='/updateaction/' method="post">
+        <table class="table table-bordered">
+        <tr>
+            <th colspan="4">更新版本(格式请参考当前版本填写,版本号可向吴三忠询问)</th>
+        </tr>
+        <tr>
+        <td>版本: <input type="text" name="version" /></td>
+        <td>更新说明: <input type="text" name="remark" /></td>
+        <td>更新日期:<input type="text" name="update_time" /></td>
+        <td><input type="submit" value="提交"></td>
+        </tr>
+        </table>
+    </form>
+</body>
+<!--</html>-->
+{% endblock %}
